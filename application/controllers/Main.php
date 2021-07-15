@@ -27,7 +27,17 @@ class Main extends CI_Controller
         $crud->set_table('employees');
         $output = $this->grocery_crud->render();
 
-        $this->_example_output($output); 
+        $this->_example_output($output);
+    }
+
+    public function todos()
+    {
+        $crud = new grocery_CRUD();
+        $crud->set_theme('datatables');
+        $crud->set_table('todos');
+        $output = $crud->render();
+
+        $this->_example_output($output);
     }
 
     function _example_output($output = null)

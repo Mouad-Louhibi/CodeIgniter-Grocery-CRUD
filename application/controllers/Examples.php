@@ -245,4 +245,13 @@ class Examples extends CI_Controller {
 		}
 	}
 
+	public function todos_management()
+	{
+		$crud = new grocery_CRUD();
+        $crud->set_theme('datatables');
+        $crud->set_table('todos');
+        $output = $crud->render();
+
+        $this->_example_output($output);
+	}
 }
